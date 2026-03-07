@@ -38,6 +38,15 @@ public class WorkoutRegistry {
     }
 
     public void updateWorkout(DayOfWeek day, UUID id, Workout workout) {
+        if (!workoutsByDay.containsKey(day)) return;
+        List<Workout> currentWorkouts = new ArrayList<>(workoutsByDay.get(day));
 
+        currentWorkouts
+                .stream().filter(w -> w.getId().equals(id))
+                .forEach(w -> {
+            w.setName(workout.getName());
+            w.setExercises(workout.getExercises());
+        });
+        workoutsByDay.put(day, currentWorkouts);
     }
 }
