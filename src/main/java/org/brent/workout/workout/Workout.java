@@ -1,16 +1,16 @@
 package org.brent.workout.workout;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.brent.workout.exercise.Exercise;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
-@RequiredArgsConstructor
 public class Workout {
 
+    private UUID id = UUID.randomUUID();
     private String name;
     private List<Exercise> exercises = new ArrayList<>();
 

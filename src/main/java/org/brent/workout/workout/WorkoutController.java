@@ -3,19 +3,40 @@ package org.brent.workout.workout;
 import org.brent.workout.WorkoutApplication;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(path="/workouts")
 public class WorkoutController {
 
     @GetMapping(path="/{day}")
-    public List<Workout> getWorkouts(@PathVariable Day day) {
+    public List<Workout> getWorkouts(@PathVariable DayOfWeek day) {
         return WorkoutApplication.getWorkoutRegistry().getWorkouts(day);
     }
 
+    @GetMapping(path="/day")
+    public String getDay() {
+        return LocalDate.now().getDayOfWeek().toString();
+    }
+
     @PostMapping("/{day}")
-    public void addWorkout(@PathVariable Day day, @RequestBody Workout workout) {
+    public void addWorkout(@PathVariable DayOfWeek day, @RequestBody Workout workout) {
         WorkoutApplication.getWorkoutRegistry().addWorkout(day, workout);
+    }
+
+    @DeleteMapping("/{day}/{id}")
+    public boolean deleteWorkout(@PathVariable DayOfWeek day, @PathVariable UUID id) {
+        return WorkoutApplication.getWorkoutRegistry().deleteWorkout(day, id);
+    }
+
+    @PostMapping("/days")
+    public String[] getDays() {
+        return Arrays.stream(DayOfWeek.values())
+                .map(DayOfWeek::name)
+                .toArray(String[]::new);
     }
 }
