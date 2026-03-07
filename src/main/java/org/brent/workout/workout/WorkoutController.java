@@ -42,6 +42,6 @@ public class WorkoutController {
 
     @PutMapping(path="/{day}/{id}")
     public void updateWorkout(@PathVariable DayOfWeek day, @PathVariable UUID id, @RequestBody Workout workout) {
-
+        WorkoutApplication.getWorkoutRegistry().updateWorkout(day, id, workout);
     }
 }
