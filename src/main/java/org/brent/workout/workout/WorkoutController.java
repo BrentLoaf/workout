@@ -23,20 +23,25 @@ public class WorkoutController {
         return LocalDate.now().getDayOfWeek().toString();
     }
 
-    @PostMapping("/{day}")
+    @PostMapping(path="/{day}")
     public void addWorkout(@PathVariable DayOfWeek day, @RequestBody Workout workout) {
         WorkoutApplication.getWorkoutRegistry().addWorkout(day, workout);
     }
 
-    @DeleteMapping("/{day}/{id}")
+    @DeleteMapping(path="/{day}/{id}")
     public boolean deleteWorkout(@PathVariable DayOfWeek day, @PathVariable UUID id) {
         return WorkoutApplication.getWorkoutRegistry().deleteWorkout(day, id);
     }
 
-    @PostMapping("/days")
+    @PostMapping(path="/days")
     public String[] getDays() {
         return Arrays.stream(DayOfWeek.values())
                 .map(DayOfWeek::name)
                 .toArray(String[]::new);
+    }
+
+    @PutMapping(path="/{id}")
+    public void updateWorkout(@PathVariable UUID id, @RequestBody Workout workout) {
+
     }
 }
