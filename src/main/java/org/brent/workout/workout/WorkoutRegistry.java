@@ -36,4 +36,8 @@ public class WorkoutRegistry {
         workoutsByDay.put(day, currentWorkouts);
         return isRemoved;
     }
+
+    public void updateWorkout(DayOfWeek day, UUID id, Workout workout) {
+
+    }
 }

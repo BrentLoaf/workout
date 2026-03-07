@@ -40,8 +40,8 @@ public class WorkoutController {
                 .toArray(String[]::new);
     }
 
-    @PutMapping(path="/{id}")
-    public void updateWorkout(@PathVariable UUID id, @RequestBody Workout workout) {
+    @PutMapping(path="/{day}/{id}")
+    public void updateWorkout(@PathVariable DayOfWeek day, @PathVariable UUID id, @RequestBody Workout workout) {
 
     }
 }
