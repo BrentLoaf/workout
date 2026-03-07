@@ -3,13 +3,15 @@ package org.brent.workout.exercise;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @RequiredArgsConstructor
 public class Exercise {
 
     private String name;
     private Unit unit;
-    private int sets = 0;
-    private int count = 0;
+    private List<Set> sets = new ArrayList<>();
 
 }
