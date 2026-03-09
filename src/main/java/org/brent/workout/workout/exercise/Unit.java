@@ -1,4 +1,4 @@
-package org.brent.workout.exercise;
+package org.brent.workout.workout.exercise;
 
 import jakarta.annotation.Nullable;
 import lombok.Getter;
@@ -15,7 +15,7 @@ public enum Unit {
 
     public static @Nullable Unit getUnitFromName(String string) {
         for (Unit unit : Unit.values()) {
-            if (unit.getName().equalsIgnoreCase(string)) continue;
+            if (!unit.getName().equalsIgnoreCase(string)) continue;
             return unit;
         }
 

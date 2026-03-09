@@ -1,4 +1,4 @@
-package org.brent.workout.exercise;
+package org.brent.workout.workout.exercise;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

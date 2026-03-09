@@ -1,7 +1,7 @@
 package org.brent.workout.workout;
 
 import lombok.Data;
-import org.brent.workout.exercise.Exercise;
+import org.brent.workout.workout.exercise.Exercise;
 
 import java.util.ArrayList;
 import java.util.List;

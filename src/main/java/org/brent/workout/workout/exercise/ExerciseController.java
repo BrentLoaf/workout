@@ -1,4 +1,4 @@
-package org.brent.workout.exercise;
+package org.brent.workout.workout.exercise;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
