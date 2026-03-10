@@ -1,5 +1,6 @@
-package org.brent.workout.workout.exercise;
+package org.brent.workout.controllers;
 
+import org.brent.workout.workout.exercise.Unit;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

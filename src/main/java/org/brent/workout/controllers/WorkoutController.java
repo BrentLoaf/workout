@@ -1,6 +1,7 @@
-package org.brent.workout.workout;
+package org.brent.workout.controllers;
 
 import org.brent.workout.WorkoutApplication;
+import org.brent.workout.workout.Workout;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.DayOfWeek;
