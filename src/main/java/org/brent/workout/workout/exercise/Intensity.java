@@ -1,6 +1,5 @@
 package org.brent.workout.workout.exercise;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -8,11 +7,14 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-public class Set {
+public class Intensity {
 
-    @Min(1)
     @Positive
-    private int count = 0;
+    private double amount;
     @NotNull
-    private Intensity intensity;
+    private Type type;
+
+    public enum Type {
+        WEIGHT;
+    }
 }
