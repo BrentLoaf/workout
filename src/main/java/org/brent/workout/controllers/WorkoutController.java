@@ -1,5 +1,6 @@
 package org.brent.workout.controllers;
 
+import jakarta.validation.Valid;
 import org.brent.workout.WorkoutApplication;
 import org.brent.workout.workout.Workout;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,7 @@ public class WorkoutController {
     }
 
     @PostMapping(path = "/{day}")
-    public void addWorkout(@PathVariable DayOfWeek day, @RequestBody Workout workout) {
+    public void addWorkout(@PathVariable DayOfWeek day, @Valid @RequestBody Workout workout) {
         WorkoutApplication.getWorkoutRegistry().addWorkout(day, workout);
     }
 
@@ -42,7 +43,7 @@ public class WorkoutController {
     }
 
     @PutMapping(path = "/{day}/{id}")
-    public void updateWorkout(@PathVariable DayOfWeek day, @PathVariable UUID id, @RequestBody Workout workout) {
+    public void updateWorkout(@PathVariable DayOfWeek day, @PathVariable UUID id, @Valid @RequestBody Workout workout) {
         WorkoutApplication.getWorkoutRegistry().updateWorkout(day, id, workout);
     }
 }
