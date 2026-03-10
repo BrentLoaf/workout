@@ -1,5 +1,7 @@
 package org.brent.workout.workout.exercise;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -7,5 +9,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Set {
 
+    @Min(1)
+    @Positive
     private int count = 0;
 }
