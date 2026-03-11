@@ -1,7 +1,7 @@
-package org.brent.workout.workout;
+package org.brent.workout.services;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import org.brent.workout.workout.Workout;
+import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
@@ -9,9 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-@Data
-@RequiredArgsConstructor
-public class WorkoutRegistry {
+@Service
+public class WorkoutService {
 
     private final HashMap<DayOfWeek, List<Workout>> workoutsByDay = new HashMap<>();
 
